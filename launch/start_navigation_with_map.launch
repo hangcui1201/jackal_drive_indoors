@@ -1,0 +1,16 @@
+<launch>
+
+    <!-- Run the map server -->
+    <!-- The Node that publishes the map saved -->
+    <arg name="map_file" default="$(find jackal_drive_indoors)/maps/map_indoors.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+    
+    <!-- Run AMCL -->
+    <!-- The node that localises Jackal based on map readings -->
+    <include file="$(find jackal_drive_indoors)/launch/amcl.launch" />
+    
+    <!--- Run Move Base -->
+    <!-- This move base has the configuration of moving with a map. -->
+    <include file="$(find jackal_drive_indoors)/launch/with_map_move_base.launch" />
+
+</launch>

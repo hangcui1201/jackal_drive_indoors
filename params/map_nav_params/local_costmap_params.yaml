@@ -1,0 +1,10 @@
+local_costmap:
+   global_frame: map # different from odom_nav_params/local_costmap_params.yaml, odom
+   robot_base_frame: base_link
+   update_frequency: 20.0
+   publish_frequency: 5.0
+   width: 10.0
+   height: 10.0
+   resolution: 0.05
+   static_map: false
+   rolling_window: true

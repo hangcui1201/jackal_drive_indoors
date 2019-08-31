@@ -1,0 +1,15 @@
+<launch>
+
+  <!--- Run gmapping -->
+  <!-- In charge of generating and saving the map -->
+  <!-- http://wiki.ros.org/gmapping -->
+  <include file="$(find jackal_drive_indoors)/launch/gmapping.launch" />
+
+  <!--- Run Move Base -->
+  <!-- 
+     In charge of sending the commands to /cmd_vel 
+     to move the robot around based on sensors and now generating map.
+  -->
+  <include file="$(find jackal_drive_indoors)/launch/with_map_move_base.launch" />
+
+</launch>
